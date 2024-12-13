@@ -23,7 +23,7 @@ jobs:
       id: docker_meta
       uses: crazy-max/ghaction-docker-meta@v1
       with:
-        images: lachlanevenson/k8s-kubectl
+        images: agilebeat/k8s-kubectl
         tag-semver: |
           {{raw}}
     - name: Set up QEMU
@@ -50,7 +50,7 @@ jobs:
         push: true
         tags: |
           ${{ github.ref != 'refs/heads/main' && steps.docker_meta.outputs.tags || '' }}
-          ${{ github.ref == 'refs/heads/main' && 'lachlanevenson/k8s-kubectl:latest' || '' }}
+          ${{ github.ref == 'refs/heads/main' && 'agilebeat/k8s-kubectl:latest' || '' }}
         labels: ${{ steps.docker_meta.outputs.labels }}
     - name: Sign image only on version branches
       if: ${{ startsWith(github.ref, 'refs/heads/v') }}
