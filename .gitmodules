@@ -1,5 +1,0 @@
-[submodule ".devcontainer"]
-	path = .devcontainer
-	url = https://github.com/agilebeat-inc/ab-devcontainer.git
-	branch = dev
-
